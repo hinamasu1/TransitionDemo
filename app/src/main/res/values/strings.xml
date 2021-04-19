@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TransitionDemo</string>
+    <string name="level1">レベル１</string>
+    <string name="level2">レベル２</string>
+    <string name="level3">レベル３</string>
+    <string name="transition">遷移</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransitionActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_level1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_level2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_level2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_level1"
+        app:layout_constraintStart_toEndOf="@id/button_level1"
+        app:layout_constraintEnd_toStartOf="@id/button_level3"
+        tools:layout_editor_absoluteX="156dp" />
+
+    <Button
+        android:id="@+id/button_level3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_level2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_level2" />
+
+    <Button
+        android:id="@+id/button_kill1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="レベル１破棄"
+        app:layout_constraintBottom_toTopOf="@+id/button_level2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
