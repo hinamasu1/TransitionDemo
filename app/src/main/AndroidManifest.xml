@@ -16,6 +16,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            android:launchMode="singleTask"
         </activity>
 
         <service
@@ -23,10 +24,9 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".LevelThreeActivity" />
-        <activity android:name=".LevelTwoActivity" />
-        <activity android:name=".LevelOneActivity">
-
+        <activity android:name=".LevelThreeActivity" android:taskAffinity=".LevelThree"/>
+        <activity android:name=".LevelTwoActivity" android:taskAffinity=".LevelTwo"/>
+        <activity android:name=".LevelOneActivity" android:taskAffinity=".LevelOne">
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -37,6 +37,10 @@ public class LevelOneActivity extends AppCompatActivity implements Serializable 
     };
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(_tag, "onCreate()");
 
@@ -76,14 +80,14 @@ public class LevelOneActivity extends AppCompatActivity implements Serializable 
             }
         });
 
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(TransitionAction._destryActivity);
-        registerReceiver(_receiver, intentFilter);
-
         Intent intent = new Intent();
         intent.setAction(TransitionAction._activityCreated);
         intent.putExtra("activity", _tag);
         sendBroadcast(intent);
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(TransitionAction._destryActivity);
+        registerReceiver(_receiver, intentFilter);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package jp.co.informatix.transitiondemo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -36,6 +37,28 @@ public class TransitionActivity extends AppCompatActivity {
             }
         });
 
+        Button level2 = findViewById(R.id.button_level2);
+        level2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(TransitionAction._levelchanged);
+                intent.putExtra("level", 2);
+                sendBroadcast(intent);
+            }
+        });
+
+        Button level3 = findViewById(R.id.button_level3);
+        level3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(TransitionAction._levelchanged);
+                intent.putExtra("level", 3);
+                sendBroadcast(intent);
+            }
+        });
+
         Button kill1 = findViewById(R.id.button_kill1);
         kill1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +66,28 @@ public class TransitionActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction(TransitionAction._destryActivity);
                 intent.putExtra("activity", LevelOneActivity._tag);
+                sendBroadcast(intent);
+            }
+        });
+
+        Button kill2 = findViewById(R.id.button_kill2);
+        kill2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(TransitionAction._destryActivity);
+                intent.putExtra("activity", LevelTwoActivity._tag);
+                sendBroadcast(intent);
+            }
+        });
+
+        Button kill3 = findViewById(R.id.button_kill3);
+        kill3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(TransitionAction._destryActivity);
+                intent.putExtra("activity", LevelThreeActivity._tag);
                 sendBroadcast(intent);
             }
         });

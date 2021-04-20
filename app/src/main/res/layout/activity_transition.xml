@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:text="@string/level2"
         app:layout_constraintBaseline_toBaselineOf="@+id/button_level1"
-        app:layout_constraintStart_toEndOf="@id/button_level1"
         app:layout_constraintEnd_toStartOf="@id/button_level3"
+        app:layout_constraintStart_toEndOf="@id/button_level1"
         tools:layout_editor_absoluteX="156dp" />
 
     <Button
@@ -50,6 +50,24 @@
         android:layout_height="wrap_content"
         android:text="レベル１破棄"
         app:layout_constraintBottom_toTopOf="@+id/button_level2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_kill2"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_kill2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="レベル2破棄"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_kill1"
+        app:layout_constraintStart_toEndOf="@id/button_kill1"
+        app:layout_constraintEnd_toStartOf="@+id/button_kill3" />
+
+    <Button
+        android:id="@+id/button_kill3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="レベル3破棄"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_kill2"
+        app:layout_constraintStart_toEndOf="@id/button_level2"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

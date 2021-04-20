@@ -29,9 +29,9 @@ public class TransitionService extends Service {
                 if (level == 0) {
                     Intent i = new Intent(getApplicationContext(), TransitionActivity.class);
                     if (_transitionActivity == false) {
-                        i.addFlags(FLAG_ACTIVITY_NEW_TASK);
+                        i.setFlags(FLAG_ACTIVITY_NEW_TASK);
                     } else {
-                        i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | FLAG_ACTIVITY_NEW_TASK);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | FLAG_ACTIVITY_NEW_TASK);
                     }
                     startActivity(i);
                 } else if (level == 1) {
@@ -96,7 +96,7 @@ public class TransitionService extends Service {
         registerReceiver(_receiver, intentFilter);
 
         Intent intent = new Intent(getApplicationContext(), LevelOneActivity.class);
-        intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 

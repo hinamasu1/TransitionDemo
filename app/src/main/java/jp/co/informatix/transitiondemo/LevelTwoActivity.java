@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -63,6 +64,10 @@ public class LevelTwoActivity extends AppCompatActivity {
         intent.setAction(TransitionAction._activityCreated);
         intent.putExtra("activity", _tag);
         sendBroadcast(intent);
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(TransitionAction._destryActivity);
+        registerReceiver(_receiver, intentFilter);
     }
 
     @Override
